@@ -1,0 +1,556 @@
+@font-face {
+  font-family: "Harmonia";
+  src: url("../fonts/HarmoniaSansProCyr-Regular.otf"); }
+
+@font-face {
+  font-family: "Harmonia-SemiBd";
+  src: url("../fonts/HarmoniaSansProCyr-SemiBd.otf"); }
+
+html {
+  overflow-x: hidden;
+  font-family: "Harmonia";
+  font-size: 14px;
+  color: #11223e; }
+
+* {
+  box-sizing: border-box; }
+
+.Page {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  padding: 83px 60px; }
+  .Page-Wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 40px;
+    margin: 0;
+    background: #FFF;
+    border: 1px solid rgba(17, 34, 62, 0.05); }
+
+.Header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%; }
+  .Header-Search input {
+    width: 240px;
+    max-height: 40px;
+    padding: 14px 16px;
+    font-size: 16px;
+    line-height: 11px;
+    color: #11223e;
+    font-family: "Harmonia";
+    border-radius: 5px;
+    border: solid 1px rgba(34, 62, 105, 0.1);
+    outline: none; }
+    .Header-Search input:focus {
+      box-shadow: 0 0 5px rgba(33, 33, 33, 0.2); }
+  .Header-Radio {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto 0 20px; }
+    .Header-Radio input {
+      position: absolute;
+      left: -9999px; }
+      .Header-Radio input:checked + label {
+        opacity: 1; }
+    .Header-Radio label {
+      display: inline-block;
+      width: 105px;
+      max-height: 40px;
+      padding: 16px 0;
+      line-height: 9px;
+      text-align: center;
+      border: solid 1px rgba(34, 62, 105, 0.3);
+      opacity: 0.5;
+      cursor: pointer; }
+      .Header-Radio label:hover {
+        -webkit-box-shadow: 0 0 5px rgba(33, 33, 33, 0.2);
+        box-shadow: 0 0 5px rgba(33, 33, 33, 0.2); }
+      .Header-Radio label:active {
+        box-shadow: 0px 0px 7px rgba(33, 33, 33, 0.4);
+        border: solid 1.5px rgba(34, 62, 105, 0.3); }
+    .Header-Radio label.Header-Label_1 {
+      border-top-left-radius: 7px;
+      border-bottom-left-radius: 7px; }
+    .Header-Radio label.Header-Label_2 {
+      border-top-right-radius: 7px;
+      border-bottom-right-radius: 7px; }
+  .Header-Button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: box-shadow .2s linear; }
+    .Header-Button_White {
+      width: 142px;
+      margin: 0 20px 0 auto;
+      color: #11223e;
+      font-family: "Harmonia-SemiBd";
+      border: solid 1px #223e69; }
+      .Header-Button_White:hover {
+        box-shadow: 0 0 5px rgba(33, 33, 33, 0.2); }
+      .Header-Button_White:active {
+        box-shadow: 0 5px 10px rgba(33, 33, 33, 0.4);
+        border: solid 1.2px #223e69;
+        padding: 1px 0 0; }
+    .Header-Button_Pink {
+      width: 169px;
+      margin: 0;
+      font-family: "Harmonia-SemiBd";
+      color: #fff;
+      background: #fc3969;
+      box-shadow: 0 3px 7px 0 rgba(252, 57, 105, 0.3); }
+      .Header-Button_Pink:hover {
+        box-shadow: 0 3px 10px 0 rgba(252, 57, 105, 0.5); }
+      .Header-Button_Pink:active {
+        padding: 1px 0 0;
+        box-shadow: 0 5px 10px rgba(252, 57, 105, 0.7); }
+
+.Description {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 30px 0;
+  padding: 11px 0;
+  border-radius: 5px;
+  background: rgba(248, 231, 28, 0.15); }
+  .Description-Lvl {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    min-width: 81px;
+    max-width: 90px;
+    height: 18px;
+    padding: 5px;
+    background: #FFF;
+    border-radius: 5px; }
+    .Description-Lvl p {
+      margin: 0;
+      z-index: 2;
+      font-size: 12px;
+      line-height: 8px; }
+    .Description-Lvl p.Description-PercentValue {
+      margin: 0 3px 0 0; }
+  .Description-Bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45%;
+    height: 100%;
+    background: #f8e71c;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5; }
+  .Description-Text {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 0 25px;
+    opacity: 0.5; }
+    .Description-Text:before {
+      content: '!';
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 14px;
+      height: 14px;
+      min-width: 14px;
+      max-width: 14px;
+      margin: 0 10px 0 0;
+      font-size: 10px;
+      border: 1px solid #11223e;
+      border-radius: 50px; }
+    .Description-Text span {
+      margin: 0 3px; }
+
+.Table {
+  display: flex;
+  flex-direction: row;
+  width: 100%; }
+  .Table table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-color: transparent; }
+  .Table-Wrapper {
+    position: relative;
+    left: -1px;
+    overflow-x: scroll; }
+  .Table-Date {
+    width: 43px;
+    min-width: 43px;
+    height: 53px;
+    margin: 0;
+    font-size: 12px;
+    color: #11223e;
+    text-align: center;
+    border: solid 1px rgba(17, 34, 62, 0.1);
+    opacity: 0.3; }
+  .Table-Cell {
+    position: relative;
+    width: 43px;
+    min-width: 43px;
+    height: 52px;
+    margin: 0;
+    font-size: 14px;
+    color: #11223e;
+    text-align: center;
+    border: solid 1px rgba(17, 34, 62, 0.1); }
+    .Table-Cell[data-value="true"] {
+      background: #faffee; }
+    .Table-Cell[data-value="false"] {
+      background: #fff6f6; }
+  .Table-CellValue {
+    position: absolute;
+    bottom: 4px;
+    left: 11px;
+    width: 22px;
+    height: 11px;
+    font-size: 10px;
+    background: #75B926;
+    border-radius: 3px; }
+  .Table-CellPosition {
+    position: absolute;
+    top: 5px;
+    right: 2px;
+    line-height: 7px;
+    font-size: 10px; }
+    .Table-CellPosition:before {
+      content: "";
+      position: relative;
+      top: 9px;
+      align-self: center;
+      border: 2.5px solid transparent; }
+    .Table-CellPosition[data-value="true"] {
+      color: #d0021b; }
+      .Table-CellPosition[data-value="true"]:before {
+        border-top: 3.5px solid #d0021b; }
+    .Table-CellPosition[data-value="false"] {
+      color: #75b926; }
+      .Table-CellPosition[data-value="false"]:before {
+        border-top: 3.5px solid #75b926; }
+  .Table-Add {
+    display: none; }
+    .Table-Add td {
+      width: 43px;
+      min-width: 43px;
+      padding: 13px 0;
+      text-align: center;
+      border: none; }
+      .Table-Add td a {
+        display: inline-block; }
+        .Table-Add td a:hover img, .Table-Add td a.Active img {
+          opacity: 1; }
+      .Table-Add td img {
+        width: 24px;
+        min-width: 24px;
+        max-width: 24px;
+        height: 24px;
+        border-radius: 5px;
+        opacity: 0.3; }
+  .Table-Add.Active {
+    display: table-row; }
+
+.TableAside {
+  width: 375px;
+  min-width: 375px;
+  border: none; }
+  .TableAside-Header {
+    border-top: 1px solid rgba(17, 34, 62, 0.2); }
+    .TableAside-Header label, .TableAside-Header a {
+      display: inline-block; }
+  .TableAside-Col {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgba(17, 34, 62, 0.2); }
+    .TableAside-Col:last-child {
+      width: 90px;
+      min-width: 90px;
+      padding: 9px 12px 11px 15px;
+      border-left: none;
+      text-align: center; }
+  .TableAside-Row td.TableAside-Col {
+    height: 52px; }
+  .TableAside-Col > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+  .TableAside-Col.TableAside-RatingFilter {
+    font-size: 12px;
+    line-height: 15px;
+    opacity: 0.3;
+    text-align: left; }
+    .TableAside-Col.TableAside-RatingFilter span {
+      margin: 0 0 0 5px;
+      border: 4px solid transparent;
+      border-top: 4px solid #11223e; }
+  .TableAside-Label, .TableAside-LabelAll {
+    position: relative;
+    cursor: pointer;
+    line-height: 0.8; }
+    .TableAside-Label:before, .TableAside-LabelAll:before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin: 0 20px 0 0;
+      background: rgba(34, 62, 105, 0.1);
+      border-radius: 5px;
+      cursor: pointer; }
+  .TableAside-Label {
+    display: flex;
+    align-items: center;
+    margin: 0 20px 0 0; }
+  .TableAside-Input, .TableAside-InputAll {
+    position: absolute;
+    left: -9999px; }
+    .TableAside-Input:checked + label:after, .TableAside-InputAll:checked + label:after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 5px;
+      width: 10px;
+      height: 10px;
+      background: #11223e;
+      border-radius: 5px;
+      cursor: pointer; }
+  .TableAside-Action {
+    width: 20px;
+    height: 20px;
+    margin: 0 15px 0 0;
+    text-decoration: none; }
+  .TableAside-Action.Trash {
+    width: 18px;
+    height: 18px; }
+    .TableAside-Action.Trash:hover svg g {
+      opacity: .6; }
+    .TableAside-Action.Trash:hover svg path.path_1 {
+      stroke: #d0021b; }
+    .TableAside-Action.Trash:hover svg path.path_2 {
+      fill: #d0021b; }
+  .TableAside-Action.Refresh {
+    width: 16px;
+    height: 16px; }
+    .TableAside-Action.Refresh:hover svg g {
+      opacity: 1; }
+      .TableAside-Action.Refresh:hover svg g path {
+        fill: #f8e71c;
+        stroke: #f8e71c; }
+  .TableAside-Action.Rocket {
+    width: 20px;
+    width: 18px; }
+    .TableAside-Action.Rocket:hover svg g {
+      opacity: 1; }
+      .TableAside-Action.Rocket:hover svg g path {
+        fill: #75b926; }
+  .TableAside-RatingValue {
+    margin: 0 auto; }
+  .TableAside-Rating {
+    position: absolute;
+    left: -9999px; }
+    .TableAside-Rating:checked ~ label svg path {
+      fill: #f8e71c;
+      stroke: #f8e71c; }
+  .TableAside-RatingLabel {
+    position: relative;
+    top: 1px;
+    margin: 0 5px 0 auto;
+    cursor: pointer; }
+    .TableAside-RatingLabel:hover svg path {
+      stroke: #f8e71c; }
+    .TableAside-RatingLabel svg {
+      width: 14px;
+      height: 14px; }
+  .TableAside-Arrow {
+    width: 5.5px;
+    height: 5.5px;
+    border-bottom: 1px solid #11223e;
+    border-right: 1px solid #11223e;
+    transform: rotate(-45deg);
+    cursor: pointer;
+    transition: transform 0.2s linear; }
+    .TableAside-Arrow:hover, .TableAside-Arrow_Active {
+      transform: rotate(45deg); }
+  .TableAside-Add {
+    display: none;
+    vertical-align: initial; }
+    .TableAside-Add td {
+      position: relative;
+      padding: 20px 0 0 54px;
+      border-left: 1px solid rgba(17, 34, 62, 0.2);
+      border-bottom: 1px solid rgba(17, 34, 62, 0.2); }
+  .TableAside-Add.Active {
+    display: table-row; }
+  .TableAside-ViewTop {
+    display: inline-block;
+    width: 174px;
+    max-width: 174px;
+    padding: 11px 0;
+    border: 1px solid rgba(17, 34, 62, 0.2);
+    border-radius: 5px;
+    text-decoration: none;
+    color: #11223e;
+    font-family: "Harmonia-SemiBd";
+    font-size: 14px;
+    text-align: center;
+    transition: box-shadow .2s linear; }
+    .TableAside-ViewTop:hover {
+      box-shadow: 0 0 5px rgba(33, 33, 33, 0.2); }
+    .TableAside-ViewTop:active {
+      padding-top: 12px;
+      border-width: 1.2px;
+      box-shadow: 0 0 7px rgba(33, 33, 33, 0.4); }
+
+@media screen and (max-width: 1085px) {
+  .Header {
+    flex-wrap: wrap; }
+    .Header-Search {
+      width: 50%; }
+    .Header-Radio {
+      justify-content: flex-end;
+      width: 50%;
+      margin: 0 0 0 auto; }
+    .Header-Button.Download {
+      margin: 20px auto 0 0; }
+    .Header-Button.AddRequest {
+      margin: 20px 0 0 auto; } }
+
+@media screen and (max-width: 992px) {
+  .Page {
+    padding: 40px 20px; } }
+
+@media screen and (max-width: 768px) {
+  .TableAside {
+    width: 205px;
+    min-width: 205px; }
+    .TableAside-Col {
+      padding: 5px; }
+      .TableAside-Col div {
+        flex-wrap: wrap; }
+    .TableAside-LabelAll {
+      margin: 0 10px 0 0; }
+      .TableAside-LabelAll:before {
+        margin: 0;
+        width: 15px;
+        height: 15px; }
+    .TableAside-Action {
+      margin: 0 15px 0 0;
+      width: 15px;
+      height: 15px; }
+      .TableAside-Action svg {
+        width: 15px;
+        height: 15px; }
+    .TableAside-Action.Rocket {
+      margin: 0; }
+    .TableAside-Col {
+      height: 47px;
+      min-height: 47px;
+      max-height: 47px; }
+      .TableAside-Col:last-child {
+        width: 70px;
+        min-width: 70px; }
+    .TableAside-Col.TableAside-RatingFilter {
+      padding: 9px 5px 9px 5px; }
+      .TableAside-Col.TableAside-RatingFilter span {
+        margin: 0;
+        border: 3.5px solid transparent;
+        border-top: 3.5px solid #11223e; }
+    .TableAside-Label {
+      align-items: flex-start;
+      width: 100%;
+      margin: 0;
+      line-height: 1.2;
+      font-size: 10px; }
+      .TableAside-Label:before {
+        margin-right: 10px;
+        min-width: 15px;
+        width: 15px;
+        height: 15px; }
+    .TableAside-RatingLabel {
+      margin: 2px auto 0 2px; }
+    .TableAside-RatingValue {
+      font-size: 10px; }
+    .TableAside-RatingFilter {
+      font-size: 10px; }
+    .TableAside-Input:checked + label:after {
+      left: 2.5px;
+      top: 2.5px; }
+    .TableAside-InputAll:checked + label:after {
+      left: 2.5px;
+      top: 2.5px; }
+    .TableAside-Arrow {
+      margin-right: 5px; }
+    .TableAside-Add {
+      padding: 10px 0 0 10px; }
+    .TableAside-Add.Active td {
+      padding: 20px 0 0; }
+      .TableAside-Add.Active td a {
+        position: relative;
+        left: 20px; }
+    .TableAside-ViewTop {
+      width: 130px;
+      font-size: 11px; }
+  .Table-Date {
+    height: 47px;
+    max-height: 47px;
+    padding: 0; }
+  .Table-Cell {
+    height: 53.6px; } }
+
+@media screen and (max-width: 576px) {
+  .Page {
+    padding: 0; }
+    .Page-Wrapper {
+      padding: 5px; }
+  .Header-Search input {
+    width: 150px;
+    max-height: 30px;
+    font-size: 12px;
+    padding: 5px; }
+  .Header-Radio {
+    width: 40%; }
+    .Header-Radio label {
+      font-size: 12px;
+      max-height: 30px;
+      padding: 10px; }
+  .Header-Button {
+    width: 120px;
+    height: 30px;
+    font-size: 12px; }
+  .Description {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0; }
+    .Description-Text {
+      margin: 10px 0 0;
+      text-align: center; }
+  .TableAside {
+    width: 185px;
+    min-width: 185px;
+    border: none; }
+    .TableAside-Col:last-child {
+      width: 50px;
+      min-width: 50px;
+      padding: 9px 5px;
+      font-size: 8px; }
+      .TableAside-Col:last-child span {
+        border-width: 2.5px;
+        border-top: 2.5px solid #11223e; }
+    .TableAside-RatingFilter {
+      font-size: 7px; }
+    .TableAside-Action {
+      margin: 0 10px 0 0; }
+      .TableAside-Action svg {
+        width: 15px;
+        height: 15px; }
+    .TableAside-Add.Active {
+      padding: 0; }
+    .TableAside-ViewTop {
+      width: 120px;
+      font-size: 10px; } }
